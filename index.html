@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Love Calculator ❤️</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #ff758c, #ff7eb3);
+            text-align: center;
+            padding: 50px;
+            color: white;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 30px;
+            border-radius: 15px;
+            display: inline-block;
+        }
+        input {
+            padding: 10px;
+            margin: 10px;
+            border: none;
+            border-radius: 5px;
+            width: 200px;
+        }
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background: #ff4b5c;
+            color: white;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background: #ff1e42;
+        }
+        h2 {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>❤️ Love Calculator ❤️</h1>
+        <input type="text" id="name1" placeholder="Enter Your Name">
+        <br>
+        <input type="text" id="name2" placeholder="Enter Partner Name">
+        <br>
+        <button onclick="calculateLove()">Calculate Love</button>
+        <h2 id="result"></h2>
+    </div>
+
+    <script>
+        function calculateLove() {
+            var name1 = document.getElementById("name1").value;
+            var name2 = document.getElementById("name2").value;
+
+            if (name1 === "" || name2 === "") {
+                alert("Please enter both names!");
+                return;
+            }
+
+            var loveScore = Math.floor(Math.random() * 101);
+
+            var message = name1 + " ❤️ " + name2 + 
+                          " Love Percentage is: " + loveScore + "%";
+
+            document.getElementById("result").innerHTML = message;
+        }
+    </script>
+
+</body>
+</html>
